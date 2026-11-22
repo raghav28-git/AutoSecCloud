@@ -1,0 +1,10 @@
+{
+  "name": "clean-node-app",
+  "version": "1.0.0",
+  "description": "Clean Express.js microservice",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.19.2",
+    "helmet": "^7.1.0"
+  }
+}

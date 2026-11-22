@@ -1,0 +1,100 @@
+Build a premium SaaS landing page for an AI platform called “Optimus”.
+
+The page should feel editorial, technical, minimal, and high-end rather than like a generic startup template. Use a restrained monochrome palette: warm off-white background, near-black foreground, soft gray text, subtle gray borders, and no colorful gradients.
+
+Use two typefaces maximum:
+- A refined display serif for large headlines and brand moments
+- A clean sans-serif for body text and interface content
+- A monospace font for labels, metrics, company names, and developer content
+
+Create a full responsive landing page with these sections:
+
+1. Fixed responsive navigation
+- Optimus wordmark with a small TM label
+- Links for Features, How it works, Developers, and Pricing
+- Sign in link
+- Primary pill button labeled “Start creating”
+- On scroll, transform the header into a floating translucent rounded card with backdrop blur, border, and subtle shadow
+- On mobile, show a full-screen menu overlay with large serif navigation links and bottom CTA buttons
+
+2. Hero section
+- Full viewport height
+- Large editorial headline:
+  “The platform”
+  “to create”
+- Rotate the final keyword between “create”, “build”, “scale”, and “ship”
+- Animate each changing word with blur, vertical movement, and letter-by-letter reveal
+- Add a thin underline beneath the animated word
+- Eyebrow label: “The platform for modern teams”
+- Supporting copy:
+  “Your toolkit to stop configuring and start innovating. Securely build, deploy, and scale the best experiences.”
+- Primary CTA: “Start free trial” with arrow icon
+- Secondary CTA: “Watch demo”
+- Add a subtle technical grid made from thin horizontal and vertical lines
+- Place a large low-opacity animated wireframe sphere or geometric form on the right side
+- Add a horizontally scrolling metrics marquee at the bottom with:
+  “20 days saved on builds — NETFLIX”
+  “98% faster deployment — STRIPE”
+  “300% throughput increase — LINEAR”
+  “6x faster to ship — NOTION”
+
+3. Features section
+- Introduce the platform’s core capabilities
+- Use generous whitespace, large serif headings, compact monospace labels, and structured feature panels
+- Avoid excessive rounded cards
+- Use thin borders and subtle hover movement
+
+4. How it works section
+- Explain the product workflow in 3–4 clear stages
+- Use large typography and directional visual relationships
+- Make the sequence feel simple and intuitive
+
+5. Infrastructure section
+- Highlight reliability, scale, speed, and deployment infrastructure
+- Include an animated geometric visualization such as a tetrahedron or wireframe system
+
+6. Metrics section
+- Show large performance statistics
+- Use editorial typography and a horizontal composition
+- Include subtle animated counting or reveal effects
+
+7. Integrations section
+- Present supported tools and services in a clean grid or horizontal layout
+- Use restrained monochrome brand marks and thin separators
+
+8. Security section
+- Communicate secure infrastructure, privacy, permissions, and enterprise readiness
+- Use calm, trustworthy visual hierarchy instead of loud graphics
+
+9. Developers section
+- Add a developer-focused area with monospace code snippets, API language, and technical copy
+- Include a subtle animated wave or data-flow visual
+
+10. Testimonials section
+- Add customer quotes, names, roles, and companies
+- Keep the layout spacious and editorial
+
+11. Pricing section
+- Include clear pricing tiers
+- Use strong typographic hierarchy, compact feature lists, and pill-shaped CTA buttons
+- Keep the cards refined with subtle borders rather than heavy shadows
+
+12. Final CTA section
+- End with a bold headline and a strong “Start creating” action
+- Use one memorable geometric visual element, not multiple decorative effects
+
+13. Footer
+- Include Optimus branding
+- Product, developers, company, and legal navigation
+- Keep it minimal and structured
+
+Implementation requirements:
+- Use Next.js App Router and React
+- Use semantic HTML and accessible buttons/links
+- Make the layout mobile-first and responsive
+- Use flexbox for most layouts and CSS grid only where useful
+- Use exactly 3–5 primary colors total
+- Use design tokens in globals.css instead of hardcoded color classes
+- Add smooth scrolling, hover states, responsive navigation, and purposeful entrance animations
+- Avoid purple gradients, generic dashboard cards, excessive rounded rectangles, emojis, decorative blobs, and overly colorful visuals
+- The result should feel like a distinctive, premium AI infrastructure brand landing page.

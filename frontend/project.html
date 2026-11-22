@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoSec Cloud - DevSecOps Project Engine</title>
+    <!-- Fonts: Inter (UI) & JetBrains Mono (Code) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/static/logo.png">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Top Back Navigation Bar -->
+    <nav class="back-nav-bar">
+        <a href="/" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Landing Page
+        </a>
+        <div class="page-badge">Project Engine &bull; Page 2/2</div>
+    </nav>
+
+    <!-- Canvas Background & Technical Grid Overlay -->
+    <canvas id="dataStreamCanvas"></canvas>
+    <div class="tech-grid-overlay"></div>
+
+    <div class="app-layout">
+        <!-- Minimal Top Header -->
+        <header class="cyber-header">
+            <div class="brand-group">
+                <img src="/static/logo.png" alt="AutoSec Cloud Logo" class="brand-logo-img">
+                <div>
+                    <h1 class="cyber-title">AutoSec <span class="monochrome-gradient-text">Cloud</span></h1>
+                    <p class="cyber-subtitle">DevSecOps Engine &bull; DPDP Compliance-as-Code</p>
+                </div>
+            </div>
+
+            <!-- Status Indicator Pill -->
+            <div class="header-status-pill">
+                <span class="status-pulse-dot"></span>
+                <span class="status-text">Pipeline Active</span>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Container -->
+        <main class="cyber-grid">
+            <!-- Left Column: Deployment Intent & Config -->
+            <section class="cyber-glass-card">
+                <div class="card-header">
+                    <h2>01 / Deployment Intent</h2>
+                    <span class="chip chip-monochrome">Intake & Config</span>
+                </div>
+
+                <form id="deployForm">
+                    <!-- Central Drag-and-Drop Zone -->
+                    <div class="shimmer-border-wrapper">
+                        <div class="upload-dropzone" id="dropZone">
+                            <input type="file" id="codeZip" accept=".zip" class="file-input">
+                            <div class="upload-icon">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                            </div>
+                            <div class="upload-prompt">
+                                <strong>Drop project .zip archive here</strong>
+                                <span>or click to browse local filesystem</span>
+                            </div>
+                            <div class="file-selected-badge hidden" id="selectedFileInfo">
+                                <span class="file-icon">📦</span>
+                                <span class="file-name" id="fileNameText">app.zip</span>
+                                <button type="button" class="btn-remove-file" id="btnClearFile">✕</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Budget Tier Cards -->
+                    <div class="intent-group">
+                        <label class="intent-label">💰 Budget Tier (FinOps Cost Cap)</label>
+                        <div class="tier-grid">
+                            <label class="tier-box" id="tierLow">
+                                <input type="radio" name="budget_tier_radio" value="low">
+                                <div class="tier-title">Low</div>
+                                <div class="tier-cap">$5/mo</div>
+                            </label>
+                            <label class="tier-box active-cyan" id="tierMedium">
+                                <input type="radio" name="budget_tier_radio" value="medium" checked>
+                                <div class="tier-title">Medium</div>
+                                <div class="tier-cap">$20/mo</div>
+                            </label>
+                            <label class="tier-box" id="tierHigh">
+                                <input type="radio" name="budget_tier_radio" value="high">
+                                <div class="tier-title">High</div>
+                                <div class="tier-cap">$50/mo</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Security Tier Select -->
+                    <div class="intent-group">
+                        <label for="securityTier" class="intent-label">🛡️ Security Gate Severity</label>
+                        <select id="securityTier" class="cyber-select">
+                            <option value="standard" selected>Standard (Trivy + Semgrep Gate)</option>
+                            <option value="high">High Security (Strict SAST & Secret Blocking)</option>
+                        </select>
+                    </div>
+
+                    <!-- DPDP Compliance Toggle -->
+                    <div class="dpdp-toggle-box">
+                        <div class="dpdp-meta">
+                            <div class="dpdp-flag">🇮🇳</div>
+                            <div>
+                                <div class="dpdp-head">DPDP Compliance-as-Code</div>
+                                <div class="dpdp-sub">Forces Mumbai (ap-south-1) & Customer KMS Key (AES-256)</div>
+                            </div>
+                        </div>
+                        <label class="cyber-switch">
+                            <input type="checkbox" id="dpdpToggle" checked>
+                            <span class="cyber-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Execute Button -->
+                    <button type="submit" id="deployBtn" class="btn-cyber-primary">
+                        Execute Security Gate & Build →
+                    </button>
+                </form>
+
+                <!-- 1-Click Quick Test Repositories -->
+                <div class="sample-repos-section">
+                    <div class="sample-repos-header">
+                        <h3>🧪 Quick Test Repositories</h3>
+                        <span class="badge-mini">1-Click Trigger</span>
+                    </div>
+
+                    <div class="sample-grid">
+                        <button type="button" class="sample-btn btn-sample-vulnerable" onclick="deploySample('vulnerable_python')">
+                            <div class="sample-status status-red">Expected: BLOCKED</div>
+                            <div class="sample-name">⚠️ Vulnerable Python App</div>
+                            <div class="sample-sub">AWS Key (`AKIA...`), `eval()`, & Flask CVEs</div>
+                        </button>
+
+                        <button type="button" class="sample-btn btn-sample-vulnerable" onclick="deploySample('vulnerable_node')">
+                            <div class="sample-status status-red">Expected: BLOCKED</div>
+                            <div class="sample-name">⚠️ Vulnerable Node.js App</div>
+                            <div class="sample-sub">JWT Secret, `child_process.exec()`, & lodash CVEs</div>
+                        </button>
+
+                        <button type="button" class="sample-btn btn-sample-clean" onclick="deploySample('clean_python')">
+                            <div class="sample-status status-green">Expected: SUCCESS</div>
+                            <div class="sample-name">✅ Clean Python FastAPI App</div>
+                            <div class="sample-sub">Clean microservice using env vars</div>
+                        </button>
+
+                        <button type="button" class="sample-btn btn-sample-clean" onclick="deploySample('clean_node')">
+                            <div class="sample-status status-green">Expected: SUCCESS</div>
+                            <div class="sample-name">✅ Clean Node.js Express App</div>
+                            <div class="sample-sub">Clean microservice with helmet headers</div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Column: Audit Visualizer & Threat Feed -->
+            <section class="cyber-glass-card">
+                <div class="card-header">
+                    <h2>02 / Audit Visualizer & Threat Feed</h2>
+                    <span class="chip chip-monochrome" id="pipelineStateBadge">Idle</span>
+                </div>
+
+                <!-- Multi-Step Flow Stepper -->
+                <div class="audit-flow-stepper" id="pipelineProgress">
+                    <div class="flow-step" id="step1">
+                        <div class="step-node">1</div>
+                        <div class="step-label">Intake & Zip-Slip</div>
+                    </div>
+                    <div class="flow-connector" id="conn1"></div>
+                    <div class="flow-step" id="step2">
+                        <div class="step-node">2</div>
+                        <div class="step-label">SAST Gate</div>
+                    </div>
+                    <div class="flow-connector" id="conn2"></div>
+                    <div class="flow-step" id="step3">
+                        <div class="step-node">3</div>
+                        <div class="step-label">Container Build</div>
+                    </div>
+                    <div class="flow-connector" id="conn3"></div>
+                    <div class="flow-step" id="step4">
+                        <div class="step-node">4</div>
+                        <div class="step-label">DPDP & FinOps</div>
+                    </div>
+                </div>
+
+                <!-- Idle Initial View -->
+                <div id="idleView" class="idle-placeholder">
+                    <div class="cyber-scanner-icon">
+                        <div class="radar-pulse"></div>
+                        <span>🔍</span>
+                    </div>
+                    <h3>Waiting for Codebase Archive</h3>
+                    <p>Select a 1-click test repository or upload a `.zip` file to execute the Shift-Left Security Gate.</p>
+                </div>
+
+                <!-- Results Output Tabs & Feed -->
+                <div id="resultsContainer" class="hidden">
+                    <div class="feed-tabs">
+                        <button class="feed-tab-btn active" onclick="switchTab('auditTab')">🛡️ Threat Feed & Audit</button>
+                        <button class="feed-tab-btn" onclick="switchTab('terminalTab')">🐳 Container Build Logs</button>
+                        <button class="feed-tab-btn" onclick="switchTab('complianceTab')">🇮🇳 DPDP & FinOps</button>
+                    </div>
+
+                    <!-- Tab 1: Threat Feed -->
+                    <div id="auditTab" class="tab-panel active">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+
+                    <!-- Tab 2: Terminal -->
+                    <div id="terminalTab" class="tab-panel hidden">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+
+                    <!-- Tab 3: Governance -->
+                    <div id="complianceTab" class="tab-panel hidden">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

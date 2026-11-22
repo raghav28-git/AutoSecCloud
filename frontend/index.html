@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoSec Cloud - Intent-Driven DevSecOps & DPDP Compliance Platform</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="AutoSec Cloud is an intent-driven DevSecOps engine with DPDP Act 2023 Compliance-as-Code and FinOps cost control. Upload codebases, run Trivy/Semgrep SAST, and auto-deploy containers.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/static/logo.png">
+    <link rel="stylesheet" href="/static/landing.css">
+</head>
+<body>
+    <!-- 3D Geometric Wireframe Background & Technical Grid overlay -->
+    <canvas id="bgWireframeCanvas"></canvas>
+    <div class="tech-grid-overlay"></div>
+
+    <!-- --------------------------------------------------------------------
+       1. FIXED RESPONSIVE NAVIGATION
+       -------------------------------------------------------------------- -->
+    <header class="navbar-wrapper" id="navbarWrapper">
+        <div class="nav-card">
+            <a href="/" class="brand-logo" id="brandLogo">
+                <img src="/static/logo.png" alt="AutoSec Cloud Logo" class="brand-logo-img">
+                <span class="brand-text">AutoSec Cloud</span>
+                <span class="brand-tm">TM</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#howitworks">How It Works</a></li>
+                <li><a href="#infrastructure">Infrastructure</a></li>
+                <li><a href="#dpdp">DPDP Compliance</a></li>
+                <li><a href="#developers">Developers</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="/project" class="link-signin">Sign In</a>
+                <a href="/project" class="btn-primary-pill" id="btnLaunchHeader">
+                    Launch Engine <span>→</span>
+                </a>
+            </div>
+
+            <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="brand-logo">
+                <img src="/static/logo.png" alt="AutoSec Cloud Logo" class="brand-logo-img">
+                <span class="brand-text">AutoSec Cloud</span>
+            </div>
+            <button type="button" style="background:none; border:none; color:#fff; font-size:2rem;" id="closeMobileBtn">✕</button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#features" onclick="document.getElementById('mobileOverlay').classList.remove('active')">Features</a></li>
+            <li><a href="#howitworks" onclick="document.getElementById('mobileOverlay').classList.remove('active')">How It Works</a></li>
+            <li><a href="#infrastructure" onclick="document.getElementById('mobileOverlay').classList.remove('active')">Infrastructure</a></li>
+            <li><a href="#dpdp" onclick="document.getElementById('mobileOverlay').classList.remove('active')">DPDP Compliance</a></li>
+            <li><a href="#developers" onclick="document.getElementById('mobileOverlay').classList.remove('active')">Developers</a></li>
+            <li><a href="#pricing" onclick="document.getElementById('mobileOverlay').classList.remove('active')">Pricing</a></li>
+        </ul>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="/project" class="btn-primary-pill" style="justify-content: center; text-align: center;">Launch Project Engine →</a>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="landing-container">
+
+        <!-- ----------------------------------------------------------------
+           2. HERO SECTION
+           ---------------------------------------------------------------- -->
+        <section class="hero-section">
+            <div class="eyebrow-label">
+                <span>🛡️</span> Intent-Driven DevSecOps &bull; DPDP Compliance-as-Code
+            </div>
+
+            <h1 class="hero-headline">
+                The platform<br>
+                to <span class="rotating-word-wrapper"><span id="rotatingWord" class="rotating-word">deploy</span></span>
+            </h1>
+
+            <p class="hero-copy">
+                Your self-service DevSecOps engine. Upload codebase archives, enforce statutory DPDP Act 2023 compliance, execute Shift-Left security gates, and cap FinOps cloud spend — automatically.
+            </p>
+
+            <div class="hero-cta-group">
+                <a href="/project" class="btn-primary-pill" style="padding: 14px 32px; font-size: 0.95rem;" id="btnHeroLaunch">
+                    Launch Project Engine <span>→</span>
+                </a>
+                <a href="#features" class="btn-secondary-outline" id="btnHeroExplore">
+                    Explore Architecture
+                </a>
+            </div>
+
+            <!-- Horizontally Scrolling Metrics Marquee -->
+            <div class="marquee-container">
+                <div class="marquee-track">
+                    <div class="marquee-item"><span class="highlight">100% CWE-22 Zip-Slip Prevented</span> — SKCET AUDIT</div>
+                    <div class="marquee-item"><span class="highlight">0 Critical CVEs Passed</span> — TRIVY & SEMGREP GATE</div>
+                    <div class="marquee-item"><span class="highlight">ap-south-1 Mumbai Region Lock</span> — DPDP 2023 ACT</div>
+                    <div class="marquee-item"><span class="highlight">45% Cloud Spend Saved</span> — FINOPS AUTO-PAUSE</div>
+                    <div class="marquee-item"><span class="highlight">Zero-Touch Dockerization</span> — FASTAPI & EXPRESS</div>
+                    <div class="marquee-item"><span class="highlight">100% CWE-22 Zip-Slip Prevented</span> — SKCET AUDIT</div>
+                    <div class="marquee-item"><span class="highlight">0 Critical CVEs Passed</span> — TRIVY & SEMGREP GATE</div>
+                    <div class="marquee-item"><span class="highlight">ap-south-1 Mumbai Region Lock</span> — DPDP 2023 ACT</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ----------------------------------------------------------------
+           3. FEATURES SECTION
+           ---------------------------------------------------------------- -->
+        <section class="landing-section" id="features">
+            <div class="section-header">
+                <span class="section-tag">// Core Capabilities</span>
+                <h2 class="section-title">Built for uncompromising security & statutory compliance.</h2>
+                <p class="section-desc">Automate your entire release pipeline without sacrificing cloud governance or security policies.</p>
+            </div>
+
+            <div class="editorial-grid-2">
+                <div class="editorial-card">
+                    <span class="card-num">01 / SHIFT-LEFT GATE</span>
+                    <h3 class="card-title">Trivy + Semgrep Vulnerability Guard</h3>
+                    <p class="card-text">Every build passes through automated Trivy container vulnerability analysis and Semgrep SAST scanning. Deployments containing CRITICAL or HIGH findings are immediately halted.</p>
+                </div>
+
+                <div class="editorial-card">
+                    <span class="card-num">02 / DPDP COMPLIANCE</span>
+                    <h3 class="card-title">Statutory DPDP Act 2023 Compliance-as-Code</h3>
+                    <p class="card-text">Enforces mandatory data residency in India (`ap-south-1` Mumbai region), attaches AWS KMS customer-managed keys (AES-256), and appends compliance audit tags automatically.</p>
+                </div>
+
+                <div class="editorial-card">
+                    <span class="card-num">03 / FINOPS CONTROL</span>
+                    <h3 class="card-title">Automated FinOps Cost-Cap Guards</h3>
+                    <p class="card-text">Eliminate rogue cloud spend. Choose budget tiers ($5, $20, $50/mo) with built-in CloudWatch idle auto-pause triggers that suspend idle workloads after 15 minutes.</p>
+                </div>
+
+                <div class="editorial-card">
+                    <span class="card-num">04 / ARCHIVE SHIELD</span>
+                    <h3 class="card-title">Zip-Slip CWE-22 Traversal Guard</h3>
+                    <p class="card-text">Protects container workspaces by pre-inspecting uploaded `.zip` archives to detect and block malicious path traversal filenames before extraction occurs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ----------------------------------------------------------------
+           4. HOW IT WORKS SECTION
+           ---------------------------------------------------------------- -->
+        <section class="landing-section" id="howitworks">
+            <div class="section-header">
+                <span class="section-tag">// Pipeline Workflow</span>
+                <h2 class="section-title">Four steps from source archive to secure container.</h2>
+            </div>
+
+            <div class="workflow-stages">
+                <div class="stage-step">
+                    <div class="stage-index">STAGE 01</div>
+                    <h3 class="card-title">Archive Intake</h3>
+                    <p class="card-text">Upload project `.zip` codebase archive. The Zip-Slip security guard verifies path canonicalization.</p>
+                </div>
+
+                <div class="stage-step">
+                    <div class="stage-index">STAGE 02</div>
+                    <h3 class="card-title">Intent Configuration</h3>
+                    <p class="card-text">Select budget cap ($5/mo - $50/mo), security severity threshold, and toggle DPDP residency compliance.</p>
+                </div>
+
+                <div class="stage-step">
+                    <div class="stage-index">STAGE 03</div>
+                    <h3 class="card-title">Shift-Left Scanning</h3>
+                    <p class="card-text">Run Trivy CVE scanner & Semgrep SAST. Detect hardcoded AWS keys, vulnerable dependencies, and insecure execution calls.</p>
+                </div>
+
+                <div class="stage-step">
+                    <div class="stage-index">STAGE 04</div>
+                    <h3 class="card-title">Zero-Touch Build</h3>
+                    <p class="card-text">Runtime auto-detector selects Python/Node.js templates, generates Dockerfile, and builds local container image.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ----------------------------------------------------------------
+           5. INFRASTRUCTURE SECTION
+           ---------------------------------------------------------------- -->
+        <section class="landing-section" id="infrastructure">
+            <div class="section-header">
+                <span class="section-tag">// Zero-Touch Infrastructure</span>
+                <h2 class="section-title">Self-service runtime containerization.</h2>
+                <p class="section-desc">Supports Python FastAPI/Flask and Node.js Express. Zero manual Dockerfile writing required.</p>
+            </div>
+
+            <div class="editorial-grid-2">
+                <div class="editorial-card">
+                    <span class="card-num">RUNTIME / PYTHON</span>
+                    <h3 class="card-title">FastAPI & Flask Engine</h3>
+                    <p class="card-text">Auto-detects `requirements.txt` or `main.py`/`app.py`. Generates optimized slim Python base images with health check endpoints.</p>
+                </div>
+
+                <div class="editorial-card">
+                    <span class="card-num">RUNTIME / NODE.JS</span>
+                    <h3 class="card-title">Express.js Engine</h3>
+                    <p class="card-text">Auto-detects `package.json` and `index.js`/`server.js`. Installs production dependencies and configures container port mapping.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ----------------------------------------------------------------
+           6. METRICS SECTION
+           ---------------------------------------------------------------- -->
+        <section class="landing-section">
+            <div class="section-header">
+                <span class="section-tag">// Performance & Impact</span>
+                <h2 class="section-title">Measurable DevSecOps efficiency.</h2>
+            </div>
+
+            <div class="metrics-row">
+                <div class="metric-item">
+                    <div class="metric-value" data-count="100" data-suffix="%">0%</div>
+                    <div class="metric-label">CWE-22 ZIP-SLIP PREVENTION</div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-value" data-count="0" data-suffix=" CVEs">0 CVEs</div>
+                    <div class="metric-label">CRITICAL VULNERABILITIES PASSED</div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-value" data-count="45" data-suffix="%">0%</div>
+                    <div class="metric-label">FINOPS CLOUD COST REDUCTION</div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-value" data-count="15" data-suffix="m">0m</div>
+                    <div class="metric-label">IDLE AUTO-PAUSE THRESHOLD</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ----------------------------------------------------------------
+           7. INTEGRATIONS SECTION
+           ---------------------------------------------------------------- -->
+        <section class="landing-section">
+            <div class="section-header">
+                <span class="section-tag">// Tooling & Integrations</span>
+                <h2 class="section-title">Powered by open-source security standards.</h2>
+            </div>
+
+            <div class="editorial-grid-4">
+                <div class="editorial-card" style="padding: 24px;">
+                    <div style="font-family: var(--font-mono); font-size: 1.1rem; color:#fff;">TRIVY</div>
+                    <p class="card-text" style="font-size: 0.85rem; margin-top: 8px;">Container & OS package CVE scanner</p>
+                </div>
+
+                <div class="editorial-card" style="padding: 24px;">
+                    <div style="font-family: var(--font-mono); font-size: 1.1rem; color:#fff;">SEMGREP</div>
+                    <p class="card-text" style="font-size: 0.85rem; margin-top: 8px;">Static Application Security Testing (SAST)</p>
+                </div>
+
+                <div class="editorial-card" style="padding: 24px;">
+                    <div style="font-family: var(--font-mono); font-size: 1.1rem; color:#fff;">DOCKER</div>
+                    <p class="card-text" style="font-size: 0.85rem; margin-top: 8px;">Container build & isolated runtime engine</p>
+                </div>
+
+                <div class="editorial-card" style="padding: 24px;">
+                    <div style="font-family: var(--font-mono); font-size: 1.1rem; color:#fff;">AWS KMS</div>
+                    <p class="card-text" style="font-size: 0.85rem; margin-top: 8px;">Customer-managed AES-256 encryption keys</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ----------------------------------------------------------------
+           8. DPDP COMPLIANCE SECTION
+           ---------------------------------------------------------------- -->
+        <section class="landing-section" id="dpdp">
+            <div class="section-header">
+                <span class="section-tag">// Statutory Alignment</span>
+                <h2 class="section-title">Digital Personal Data Protection (DPDP) Act 2023.</h2>
+                <p class="section-desc">Automating statutory mandates directly into your cloud infrastructure deployments.</p>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="compliance-table">
+                    <thead>
+                        <tr>
+                            <th>DPDP Statutory Obligation</th>
+                            <th>Statutory Basis</th>
+                            <th>AutoSec Cloud Technical Implementation</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Reasonable Security Safeguards</strong></td>
+                            <td>Sec. 8(5)</td>
+                            <td>Pre-deployment Shift-Left Gate & Customer-Managed KMS Encryption (AES-256)</td>
+                            <td><span class="badge-statutory">ENFORCED</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Technical Observance Measures</strong></td>
+                            <td>Sec. 8(4)</td>
+                            <td>Mandatory Trivy vulnerability scanning & Semgrep static rule checks</td>
+                            <td><span class="badge-statutory">ENFORCED</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Data Residency Scoping</strong></td>
+                            <td>Policy Intent</td>
+                            <td>Automatic cloud region lock to `ap-south-1` (Mumbai, India)</td>
+                            <td><span class="badge-statutory">ENFORCED</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Audit Compliance Tagging</strong></td>
+                            <td>Sec. 8(4)</td>
+                            <td>Automated resource tagging: `compliance: dpdp-ready`</td>
+                            <td><span class="badge-statutory">ENFORCED</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ----------------------------------------------------------------
+           9. DEVELOPERS SECTION
+           ---------------------------------------------------------------- -->
+        <section class="landing-section" id="developers">
+            <div class="section-header">
+                <span class="section-tag">// Developer API & CLI</span>
+                <h2 class="section-title">Simple REST integration.</h2>
+            </div>
+
+            <div class="developer-box">
+                <div class="code-header">
+                    <div class="code-dots">
+                        <div class="code-dot"></div>
+                        <div class="code-dot"></div>
+                        <div class="code-dot"></div>
+                    </div>
+                    <span>POST /api/deploy — Multipart Form Payload</span>
+                </div>
+                <div class="code-body">
+<span class="code-comment"># Trigger deployment pipeline programmatically via curl</span>
+curl -X POST <span class="code-str">"http://localhost:8000/api/deploy"</span> \
+  -F <span class="code-str">"file=@my_app.zip"</span> \
+  -F <span class="code-str">"budget_tier=medium"</span> \
+  -F <span class="code-str">"security_tier=standard"</span> \
+  -F <span class="code-str">"dpdp_enabled=true"</span>
+
+<span class="code-comment"># Response: 200 OK (Security Gate Verdict: PASSED)</span>
+{
+  <span class="code-keyword">"status"</span>: <span class="code-str">"SUCCESS"</span>,
+  <span class="code-keyword">"passed"</span>: <span class="code-func">true</span>,
+  <span class="code-keyword">"language_detected"</span>: { <span class="code-keyword">"language"</span>: <span class="code-str">"Python"</span>, <span class="code-keyword">"entrypoint"</span>: <span class="code-str">"main.py"</span> },
+  <span class="code-keyword">"dpdp_compliance"</span>: { <span class="code-keyword">"region"</span>: <span class="code-str">"ap-south-1 (Mumbai)"</span>, <span class="code-keyword">"kms"</span>: <span class="code-str">"AES-256"</span> }
+}
+                </div>
+            </div>
+        </section>
+
+        <!-- ----------------------------------------------------------------
+           10. TESTIMONIALS & AUDITS SECTION
+           ---------------------------------------------------------------- -->
+        <section class="landing-section">
+            <div class="section-header">
+                <span class="section-tag">// Verification & Audits</span>
+                <h2 class="section-title">Verified by cybersecurity researchers.</h2>
+            </div>
+
+            <div class="editorial-grid-2">
+                <div class="editorial-card">
+                    <p class="card-text" style="font-size: 1.05rem; font-style: italic; color:#e2e8f0; margin-bottom: 20px;">
+                        "AutoSec Cloud elegantly combines statutory DPDP data protection requirements with automated pre-deployment vulnerability blocking. It prevents insecure code from ever reaching cloud containers."
+                    </p>
+                    <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">
+                        — Department of Computer Science & Engineering (Cyber Security)<br>
+                        Sri Krishna College of Engineering and Technology
+                    </div>
+                </div>
+
+                <div class="editorial-card">
+                    <p class="card-text" style="font-size: 1.05rem; font-style: italic; color:#e2e8f0; margin-bottom: 20px;">
+                        "The FinOps auto-pause mechanism and Zip-Slip path traversal protection give developers instant feedback while guaranteeing strict cost containment."
+                    </p>
+                    <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">
+                        — DevSecOps Research Audit Group
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ----------------------------------------------------------------
+           11. PRICING & INTENT TIERS
+           ---------------------------------------------------------------- -->
+        <section class="landing-section" id="pricing">
+            <div class="section-header">
+                <span class="section-tag">// FinOps Intent Tiers</span>
+                <h2 class="section-title">Predictable cloud spend controls.</h2>
+                <p class="section-desc">Budget caps are hard-enforced. Resource containers are auto-paused when idle.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Tier 1 -->
+                <div class="pricing-card">
+                    <span class="tier-badge">DEVELOPER</span>
+                    <h3 class="card-title">Low Budget</h3>
+                    <div class="pricing-price">$5 <span>/ mo max</span></div>
+                    <p class="card-text">Ideal for lightweight microservices & testing.</p>
+
+                    <ul class="pricing-features">
+                        <li>1 Container Instance</li>
+                        <li>Standard Security Gate (Trivy + Semgrep)</li>
+                        <li>15-min Idle Auto-Pause</li>
+                        <li>Zip-Slip Protection</li>
+                    </ul>
+
+                    <a href="/project" class="btn-secondary-outline" style="text-align: center; justify-content: center; margin-top: auto;">Select Intent</a>
+                </div>
+
+                <!-- Tier 2 -->
+                <div class="pricing-card highlighted">
+                    <span class="tier-badge">POPULAR</span>
+                    <h3 class="card-title">Medium Budget</h3>
+                    <div class="pricing-price">$20 <span>/ mo max</span></div>
+                    <p class="card-text">Ideal for production web applications.</p>
+
+                    <ul class="pricing-features">
+                        <li>2 Scaled Instances</li>
+                        <li>Strict Security & Secret Gate</li>
+                        <li>DPDP Act 2023 Residency Lock</li>
+                        <li>AWS KMS Customer-Managed Key</li>
+                    </ul>
+
+                    <a href="/project" class="btn-primary-pill" style="text-align: center; justify-content: center; margin-top: auto;">Select Intent →</a>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="pricing-card">
+                    <span class="tier-badge">ENTERPRISE</span>
+                    <h3 class="card-title">High Budget</h3>
+                    <div class="pricing-price">$50 <span>/ mo max</span></div>
+                    <p class="card-text">Ideal for high-throughput enterprise workloads.</p>
+
+                    <ul class="pricing-features">
+                        <li>Up to 5 Instances</li>
+                        <li>High-Security SAST Gate</li>
+                        <li>Full DPDP Compliance-as-Code</li>
+                        <li>Priority Container Sandbox</li>
+                    </ul>
+
+                    <a href="/project" class="btn-secondary-outline" style="text-align: center; justify-content: center; margin-top: auto;">Select Intent</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ----------------------------------------------------------------
+           12. FINAL CTA SECTION
+           ---------------------------------------------------------------- -->
+        <section class="landing-section" style="border-bottom: none;">
+            <div class="final-cta-box">
+                <h2 style="font-family: var(--font-serif); font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 400; margin-bottom: 20px;">
+                    Ready to deploy secure, DPDP-compliant applications?
+                </h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 580px; margin: 0 auto 36px;">
+                    Launch the interactive DevSecOps Intent Engine. Upload your project codebase and run live vulnerability scans in seconds.
+                </p>
+                <a href="/project" class="btn-primary-pill" style="padding: 16px 36px; font-size: 1rem;" id="btnFinalCta">
+                    Launch Project Engine <span>→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ----------------------------------------------------------------
+           13. FOOTER
+           ---------------------------------------------------------------- -->
+        <footer class="footer-section">
+            <div class="footer-grid">
+                <div>
+                    <div class="brand-logo" style="margin-bottom: 16px;">
+                        <img src="/static/logo.png" alt="AutoSec Cloud Logo" class="brand-logo-img">
+                        <span class="brand-text">AutoSec Cloud</span>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; max-width: 320px; line-height: 1.6;">
+                        An Intent-Driven DevSecOps Engine with statutory DPDP Compliance-as-Code and FinOps Cost Control. Developed at Sri Krishna College of Engineering and Technology.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="#features">Shift-Left Gate</a></li>
+                        <li><a href="#dpdp">DPDP Compliance</a></li>
+                        <li><a href="#pricing">FinOps Tiers</a></li>
+                        <li><a href="/project">Launch Engine</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Developers</h4>
+                    <ul class="footer-links">
+                        <li><a href="#developers">REST API</a></li>
+                        <li><a href="#infrastructure">Container Runtimes</a></li>
+                        <li><a href="#howitworks">Pipeline Flow</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Academic</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Dept of CSE (Cyber Security)</a></li>
+                        <li><a href="#">SKCET Capstone Project</a></li>
+                        <li><a href="#">DPDP Act 2023 Mapping</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 AutoSec Cloud. All rights reserved.</div>
+                <div>DPDP Statutory Compliance &bull; FinOps Cost Guard</div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="/static/landing.js"></script>
+</body>
+</html>
